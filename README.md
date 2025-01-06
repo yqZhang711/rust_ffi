@@ -171,7 +171,7 @@
         // 创建一个新的Person对象, 这里接管了 person.name 的所有权
         // let new_person = Person {
         //     name: unsafe { CString::from_raw(person.name).into_raw() },
-        //     age: person.age + 1, // 增加年龄
+        //     age: person.age + 1, 
         // };
 
         // 创建一个新的CString，而不是接管 person.name 的所有权
@@ -180,7 +180,7 @@
 
         let new_person = Person {
             name,
-            age: person.age + 1, // 增加年龄
+            age: person.age + 1, 
         };
 
         Box::into_raw(Box::new(new_person))
@@ -219,8 +219,6 @@
 - 编写golang代码
   ```
     package main
-    
-    // 如果是静态库使用： #cgo LDFLAGS: -L. -lrust_lib
 
     /*
     #cgo LDFLAGS: -L. -lrust_lib
